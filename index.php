@@ -1,7 +1,7 @@
 <?php 
 	session_start(); 
 	//if(isset($_SESSION['username'])) { 
-		header( "Location:tetris.php"); 
+		header( "Location:pentatris.php"); 
 	//}
 ?>
 <!DOCTYPE html>

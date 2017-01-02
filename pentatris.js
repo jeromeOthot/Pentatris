@@ -4,7 +4,7 @@
 /* Game Sounds */
 
 var bgSound = new Howl({
-    src: ["sounds/Tatrisa.mid"],
+    src: ["sounds/SurfingAlien.mp3"],
     loop: true,
     volume: 0.5,
     preload: true,
@@ -48,6 +48,10 @@ var currentY;
 //tetrimino shape configurations and colors
 var tetriminoes = [
 
+	//	
+	//Pièces composé de 3 blocks  ou moin
+	//		
+
 	// *
 	[ 1, 0, 0, 0,
 	  0, 0, 0, 0,
@@ -72,7 +76,11 @@ var tetriminoes = [
 	  1, 0, 0, 0,
 	  0, 0, 0, 0,
 	  0, 0, 0, 0 ],
-	  
+	
+	//	
+	//Pièces composé de 4 blocks  
+	//		
+	 
      // ****
 	[ 1, 1, 1, 1,
 	  0, 0, 0, 0,
@@ -121,12 +129,143 @@ var tetriminoes = [
 	  0, 0, 0, 0,
 	  0, 0, 0, 0 ],	
 	  
+	//	
+	//Pièces composé de 5 blocks  
+	//	
+	
+    // ****
+	// *
+    [ 1, 1, 1, 1,
+	  1, 0, 0, 0,
+	  0, 0, 0, 0,
+	  0, 0, 0, 0 ],	
+	  
+	// ****
+	//    *
+    [ 1, 1, 1, 1,
+	  0, 0, 0, 1,
+	  0, 0, 0, 0,
+	  0, 0, 0, 0 ],	
+	  
+	// ***
+	// **
+    [ 1, 1, 1, 0,
+	  1, 1, 0, 0,
+	  0, 0, 0, 0,
+	  0, 0, 0, 0 ],	
+	  
+	//  ***
+	//   **
+    [ 0, 1, 1, 1,
+	  0, 0, 1, 1,
+	  0, 0, 0, 0,
+	  0, 0, 0, 0 ],
+
+	//  ***
+	//    **
+    [ 1, 1, 1, 0,
+	  0, 0, 1, 1,
+	  0, 0, 0, 0,
+	  0, 0, 0, 0 ],	
+	  
+    //  ***
+	// **
+    [ 0, 1, 1, 1,
+	  1, 1, 0, 0,
+	  0, 0, 0, 0,
+	  0, 0, 0, 0 ],	
+	  
+	// ****
+	//  *
+    [ 1, 1, 1, 1,
+	  0, 1, 0, 0,
+	  0, 0, 0, 0,
+	  0, 0, 0, 0 ],	
+	  
+	// ****
+	//   *
+    [ 1, 1, 1, 1,
+	  0, 0, 1, 0,
+	  0, 0, 0, 0,
+	  0, 0, 0, 0 ],
+
+	//   **
+	//  **
+	//   *
+    [ 0, 0, 1, 1,
+	  0, 1, 1, 0,
+	  0, 0, 1, 0,
+	  0, 0, 0, 0 ],
+	  
+	//  **
+	//   **
+	//   *
+    [ 0, 1, 1, 0,
+	  0, 0, 1, 1,
+	  0, 0, 1, 0,
+	  0, 0, 0, 0 ],
+	
+	//  ***
+	//   *
+	//   *
+    [ 0, 1, 1, 1,
+	  0, 0, 1, 0,
+	  0, 0, 1, 0,
+	  0, 0, 0, 0 ],
+
+	//  ***
+	//  * *   
+    [ 0, 1, 1, 1,
+	  0, 1, 0, 1,
+	  0, 0, 0, 0,
+	  0, 0, 0, 0 ],	
+	  
+    //  ***
+	//  * 
+    //  *	
+    [ 0, 1, 1, 1,
+	  0, 1, 0, 0,
+	  0, 1, 0, 0,
+	  0, 0, 0, 0 ],	
+	 
+    //  *		 
+	// ***
+	//  * 
+    [ 0, 1, 0, 0,
+	  1, 1, 1, 0,
+	  0, 1, 0, 0,
+	  0, 0, 0, 0 ],
+	  
+	 // **		 
+	// **
+	// * 
+    [ 0, 1, 1, 0,
+	  1, 1, 0, 0,
+	  1, 0, 0, 0,
+	  0, 0, 0, 0 ],
+	  
+	//  **		 
+	//  *
+	// ** 
+    [ 0, 1, 1, 0,
+	  0, 1, 0, 0,
+	  1, 1, 0, 0,
+	  0, 0, 0, 0 ],
+	  
+	// **		 
+	//  *
+	//  ** 
+    [ 1, 1, 0, 0,
+	  0, 1, 0, 0,
+	  0, 1, 1, 0,
+	  0, 0, 0, 0 ]
 ];
 
 
 
 var colors = [
-    'black', 'gold', 'brown', 'darkmagenta', 'lightgreen', 'red', 'darkorange', 'pink', 'blue', 'darkorange', 'green'
+    'black', 'gold', 'brown', 'darkmagenta', 'lightgreen', 'red', 'darkorange', 'pink', 'blue', 'darkorange', 'green',
+	'black', 'gold', 'brown', 'darkmagenta', 'lightgreen', 'red', 'darkorange', 'pink', 'blue', 'darkorange', 'green', 'brown', 'darkmagenta', 'lightgreen', 'red', 'darkorange'
 ];
 
 //Game state parameters
@@ -312,7 +451,8 @@ function draw() {
 /* Game Controls */
 
 function newGame() {
-    if ($('#musicswitch').is(':checked')) bgSound.stop().play();
+	bgSound.play();
+   // if ($('#musicswitch').is(':checked')) bgSound.stop().play();
     if ($('#soundswitch').is(':checked')) {
 	    dropSound.mute(false);
 	    clearSound.mute(false);

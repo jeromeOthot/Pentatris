@@ -1,12 +1,3 @@
-<?php 
-	session_start();
-	/*
-	require_once 'connection.php';
-	if(!isset($_SESSION['username'])) {
-		header("Location:index.php");
-	}
-	updateSessionData(); */
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -32,7 +23,7 @@
 				<p>SCORE: &nbsp;<span id="score"> - </span></p>
 				<p>LEVEL: &nbsp;<span id="score"> - </span></p>
 				<p>HIGH SCORE: </p>
-				<!-- <p id="statsinfo"><?php /* echo $_SESSION['userinfo']['lastscore']." | ".$_SESSION['userinfo']['highscore']." | ".$_SESSION['userinfo']['plays']; */?></p> -->
+				<!-- <p id="statsinfo"> <php /* echo $_SESSION['userinfo']['lastscore']." | ".$_SESSION['userinfo']['highscore']." | ".$_SESSION['userinfo']['plays']; */?></p> -->
 				<hr>
 				NEXT:
 				<br />
@@ -74,7 +65,7 @@
 				<input type="checkbox" id="soundswitch" value="sound" checked>
 				<label id="soundlabel" for="soundswitch"><i class="fa fa-bell-o"></i>&nbsp;</label>
 				
-				<!-- <span class="username"><?php /*echo "<a id=\"managelink\" alt=\"Manage account\" href=manage.php>".explode(' ', $_SESSION['name'])[0]."</a>"; */?></span> -->
+				<!-- <span class="username"><php /*echo "<a id=\"managelink\" alt=\"Manage account\" href=manage.php>".explode(' ', $_SESSION['name'])[0]."</a>"; */?></span> -->
 				<a href="flogout.php" id="logoutb"><i class="fa fa-sign-out"></i>&nbsp;LOGOUT</a>
 				<!-- <a id="helpb"><i class="fa fa-info-circle"></i>&nbsp;Help</a> -->
 				</center>

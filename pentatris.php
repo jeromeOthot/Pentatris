@@ -10,13 +10,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tetris</title>
+		<title>Pentatris</title>
 		<script src="frameworks/js/jquery-2.1.1.js" charset="utf-8"></script>
 		<script src="frameworks/js/paper.js" charset="utf-8"></script>
-		 <link rel="stylesheet" href="tetris.css" title="Tetris" type="text/css" media="screen" charset="utf-8"> 
+		 <link rel="stylesheet" href="pentatris.css" title="Pentatris" type="text/css" media="screen" charset="utf-8"> 
 		 <link rel="stylesheet" href="frameworks/css/font-awesome.min.css" title="Tetris" type="text/css" media="screen" charset="utf-8">
 		<script src="frameworks/js/howler.js" charset="utf-8"></script>
-		<link rel="icon" href="tetris.png" type="image/png">
+		<link rel="icon" href="Pentatris.png" type="image/png">
 	</head>
 	<body>
 		<div id="gamecontainer">
@@ -82,6 +82,6 @@
 				
 			</div>
 		</div>
-		<script src="tetris.js" charset="utf-8"></script>
+		<script src="pentatris.js" charset="utf-8"></script>
 	</body>
 </html>
